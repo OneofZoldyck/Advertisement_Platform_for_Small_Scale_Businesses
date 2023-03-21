@@ -1,0 +1,154 @@
+<html>
+<head>
+
+<title> Mini-Project </title>
+
+<link rel="stylesheet" href="bootstrap.min.css">
+<link rel="stylesheet" href="styles.css">
+<link href="css/bootstrap.css" rel="stylesheet">
+
+</head>
+<body>
+<div class = "container-fluid">
+<nav class="navbar navbar-expand-lg static-top">
+  <div class="container-fluid">
+		<div class = "headbrand">
+          <h3><a href="#"> BuzzQuick </a></h4>
+		 </div>
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse nav1" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <p id="info"> <a href="#" style="color:white">See how we are dealing with Covid-19. Click here to know more</a></p>
+  <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="Halo.jpg" height = "500" style="width:100%">
+      <div class="text">Caption Text</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="cleaning.jfif" height = "500" style="width:100%">
+      <div class="text">Caption Two</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="Frozen Omen.jpg" height = "500" style="width:100%">
+      <div class="text">Caption Three</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+  </div>
+
+
+
+<div class = "container-fluid">
+<div class = "row">
+	<div class = "col-md-3">
+		<div class = "sidebar">
+			<p id = "cat"><b> CATEGORIES </b></p>
+
+
+        <div class="scroller">
+          <!-- Currently we only added only scroller but we need a design to better diplay our categories
+          or bysiness or something else ehich would be dicussed shortly
+          <h2>CSS Buttons</h2> -->
+            <a href="#" class="button1">HOTEL MANAGEMENT</a>
+            <a href="#" class="button1">FRONTENT DEVELOPER</a>
+            <a href="#" class="button1">FINANCIAL CONSULTSANT</a>
+            <a href="#" class="button1">MEHANDI WALI</a>
+            <a href="#" class="button1">MUSICIAN</a>
+            <a href="#" class="button1">BALLET DANCER</a>
+            <a href="#" class="button1">HOTEL MANAGEMENT</a>
+            <a href="#" class="button1">FINANCIAL CONSULTSANT</a>
+            <a href="#" class="button1">TATTOO ARTIST</a>
+            <a href="#" class="button1">MUSICIAN</a>
+            <a href="#" class="button1">BALLET DANCER</a>
+            <!-- <button class="button">Button</button> -->
+
+          </div>
+          <!-- <div class = "cat_img"><img src = "cleaning.jfif" height = "200" width="300" ></img></div>
+          <img src = "cleaning.jfif" height = "200" width="300" style="horizontal-align: middle"></img>           -->
+
+		</div>
+	</div>
+
+	<div class = "col-md-9">
+	<div class = "search">
+		<input type="text" placeholder="Search...">
+	</div>
+	<div class = "main_menu">
+
+    <!-- Kushal code added -->
+
+
+
+
+
+	</div>
+	</div>
+</div>
+
+
+</div>
+
+
+
+<!-- JAvascript code which would be later added in js filegsgsg -->
+
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 10000); // Change image every 2 seconds
+}
+</script>
+
+</body>
+</html>

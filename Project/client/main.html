@@ -1,0 +1,594 @@
+<head>
+  <title>BuzzQuick</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="/images/BZ_icon.jpg" type="image/gif">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1500px;
+  position: relative;
+  margin: auto;
+  overflow:hidden;
+  max-height:550px;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover{
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 10s;
+  animation-name: fade;
+  animation-duration: 10s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .8}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .8}
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+</style>
+
+</head>
+
+<body>
+
+</body>
+
+
+<template name="ApplicationLayout">
+  {{> yield "navbar"}}
+  {{> yield "main"}}
+</template>
+
+<template name="image">
+  <div class="container">
+  <h2>{{img_alt}}</h2>
+  <a href="/main_part"><img class="single-img" src="{{img_src}}"/></a>
+</div>
+  </template>
+
+<template name="LandingPage">
+
+  <div class="container-fluid">
+    <div class="jumbotron land">
+      <h1>Welcome to</h1><br>
+      <h1>BuzzQuick</h1><br><br>
+      <p>BuzzQuick connects people of various professions to the rest of the world.<br>
+        It allows such people to gain recognition and achive their dreams.<br>
+        So what are you waiting for? Go ahead and ENTER !</p>
+      <a href="/main_part" class="btn btn-info btn-enter">ENTER</a>
+    </div>
+  </div>
+
+</template>
+
+<template name="Contact">
+
+  <div class="container-fluid">
+    <div class="Contact">
+      <h1 align="center"><b>CONTACT US</b></h1>
+      <p align="center"> We are here to resolve each and every query of yours. Feel free to contact us and ask any doubts that you have.</p><br><br>
+      <p>Working days  : Mon - fri</p><br>
+      <p>Working hours : 8:00 am - 8:00pm</p><br>
+      <p>Email              : supportdesk@BuzzQuick.com</p><br>
+      <p>Toll free No.     : 022 786 765 8765</p>
+    </div>
+  </div>
+
+</template>
+
+<template name="about_us">
+<div class="container-fluid">
+  <div class="about-section">
+  <h1>About Us</h1>
+  <p>We believe that no profession/business is small or big. There are many small scale professions/business out there that are not recognised<br>
+  So we came up with an idea to show them to the rest of the world and gain recognition. Those people can create a new profile on our website<br>
+  and let the rest of the world see it. That too all for free !</p>
+</div>
+
+<h2 style="text-align:center">Our Team</h2>
+
+<div class="row col_card">
+  <div class="col-md-4">
+    <div class="card">
+      <img src="/images/Abhishek.jpeg" alt="ABHISHEK" style="width:100%">
+      <div class="container">
+        <h2>ABHISHEK MAHAKAL</h2>
+        <p class="title">CO-FOUNDER</p>
+        <p>Website Backend Expert</p>
+        <footer class="foot">
+          <pre>Email   : abhishekmahakal2@gmail.com<br>
+Contact : +91 8779772981</pre>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card">
+      <img src="/images/Default.png" alt="KUSHAL" style="width:100%">
+      <div class="container">
+        <h2>Mangesh Jadhav</h2>
+        <p class="title">CO-FOUNDER</p>
+        <p>Creativity Expert </p>
+        <footer class="foot">
+          <pre>Email   : mangeshjadhav@gmail.com<br>
+Contact : +91 9757318190</pre>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <!--<div class="col-md-4">
+    <div class="card">
+      <img src="/images/Gauri.jpeg" alt="GAURI" style="width:100%">
+      <div class="container">
+        <h2>GAURI MORYE</h2>
+        <p class="title">FOUNDER</p>
+        <p>Frontend and designing Expert</p>
+        <footer class="foot">
+          <pre>Email   : gaurimorye1234@gmail.com<br>
+Contact : +91 7045248654</pre>
+        </footer>
+      </div>
+    </div>
+  </div>-->
+</div>
+</div>
+
+</template>
+
+<template name="Profile_view">
+  <div class="container-fluid">
+    <div class="view">
+      <a href="/image/{{_id}}"><img src="{{view_img _id}}"></a>
+      <p><b>Name</b>        : {{view_name _id}}<br><br>
+         <b>Category</b>    : {{view_cat _id}}<br><br>
+         <b>Description</b> : {{view_desc _id}}<br><br>
+         <b>Contact  </b>   : {{view_contact _id}}<br><br>
+         <b>Created On </b> : {{view_create _id}}
+        </p>
+    </div>
+  </div>
+</template>
+
+<template name="Covid_Measures">
+
+  <div class="container-fluid">
+      <div class="col-md-12 Body_check">
+        <img src="/images/Body_Check_Covid.jpg">
+        <p>We here at BuzzQuick make sure that all the people who are registered here are covid negative.<br>
+        1. The person's body temperature is sent to our staff for inspection.<br>
+        2. Our staff inspects the temperature and make sure that it's not fake.<br>
+        3. After quality check, the details are forwarded to you.</p>
+    </div>
+    <div class="col-md-12 Body_check">
+      <img src="/images/Sanitization_Covid.jpg">
+      <p>We make sure that the people that will be hired will be carrying with them :<br>
+        1. Sanitizers<br>
+        2. Face Masks<br>
+        3. Face Shields</p>
+      </div>
+    <div class="col-md-12 Body_check">
+      <img src="images/Covid_test.jpg">
+      <p>If under some important reasons, the customer wants the covid test of the person,<br>
+        We provide them with that as soon as possible.</p>
+      </div>
+  </div>
+
+
+</template>
+
+<template name="Edit_Profiles">
+  <div class="container-fluid">
+    <h1 id="edit_head"> Welcome <b>{{user_name _id}}</b>. Edit your Profile Below</h1>
+    <div class="Edit-box">
+      <form class="js-edit-profiles">
+
+        <div class="form-group1">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter name" name="name"/>
+      </div>
+      <br>
+        <div class="form-group1">
+          <label for="img_src">Image URL:</label><br>
+          <input type="text" class="form-control" id="img_src" placeholder="url" name="img_src"/>
+
+      </div>
+      <div class="form-group1">
+       <label for="img_alt">Image alt description:</label>
+        <textarea class="form-control" id="img_alt" placeholder="Describe the image here .." name="img_alt"></textarea>
+      </div>
+
+      <div class="form-group1">
+      <label for="pro_des">Description:</label>
+        <textarea class="form-control" id="pro_des" placeholder="Write description here.." name="pro_des"></textarea>
+      </div>
+
+      <div class="form-group1">
+        <label for="category">Category:</label>
+        <select class="form-control form-control-md" id="category">
+          <option value="">Front-End Developer</option>
+          <option>Financial Consultant</option>
+          <option>Mendhi Artist</option>
+          <option>Musician/Singer</option>
+          <option>Dancer</option>
+          <option>Hotel Management</option>
+          <option>Tiffin Service</option>
+          <option>Tattoo Artist</option>
+          <option>Wedding Planner</option>
+          <option>Parlour</option>
+          <option>Other</option>
+          </select>
+          </div>
+
+          <div class="form-group1">
+            <label for="contact">Contact details</label>
+            <input type="tel" class="form-control" id="contact" name="contact" placeholder="Format:888-888-8888" pattern="[7-9]{3}-[0-9]{3}-[0-9]{4}" required>
+
+          </div>
+        <button class="btn btn-success edit-save-btn">Save</button>
+        <a href="/main_part"><button class="btn btn-dark edit-save-btn">Back</button></a>
+      </form>
+    </div>
+  </div>
+  <!--<h1> EDIT {{_id}}</h1> -->
+</template>
+
+<template name="navbar">
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg static-top nav-cus" style="background-color: #eeeeee; margin-bottom: 25px;">
+    <div class="container-fluid">
+      <div id="main">
+        <button class="openbtn" onclick="openNav()" id="#myDiv">&#9776;</button>
+      </div>
+  		<div class = "headbrand">
+            <h3><a class="navbar-header"  href="/main_part"> BuzzQuick </a></h3>
+  		 </div>
+
+
+       <div id="mySidebar" class="sidebar1">
+   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+   <a href="/main_part">Home</a>
+   <a href="/about_us">About</a>
+   <a href="/Contact">Contact</a>
+   <!--<a>{{> loginButtons align="left"}}</a>-->
+
+ </div>
+      <div class="collapse navbar-collapse nav1" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/main_part"><span style="font-size: 15px"><b>Home</b></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about_us"><span style="font-size:12px">About</span></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/Contact"><span style="font-size:12px">Contact</span></a>
+          </li>
+
+        </ul>
+      </div>
+
+      <a class="nav-link sigin"><span style="font-size:12px">{{> loginButtons align="right"}}</span></a>
+
+    </div>
+  </nav>
+  </div>
+
+</template>
+
+<template name="main_part">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <div class="container-fluid">
+    <p id="info"> <a href="/Covid_Measures" style="color:white">See how we are dealing with Covid-19. Click here to know more</a></p>
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="/images/Wed.jpg"/>
+        <div class="text">Wedding Planner</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="/images/Chef.jpeg"/>
+        <div class="text">Chef</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="/images/Tiffen.png" />
+        <div class="text">Tiffen Service</div>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+      </div>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+    </div>
+
+  <div class = "container-fluid">
+  <div class = "row">
+  	<div class = "col-md-3">
+  		<div class = "sidebar">
+  			<p id = "cat"><b> CATEGORIES </b></p>
+        <div class="scroller">
+            <button class="button1" value="Front-End Developer">Front-End Developer</button>
+            <button class="button1" value="Financial Consultant">Financial Consultant</button>
+            <button class="button1"  value="Mendhi Artist">Mendhi Artist</button>
+            <button class="button1"  value="Musician/Singer">Musician/Singer</button>
+            <button class="button1" value="Dancer">Dancer</button>
+            <button class="button1" value="Hotel Management">Hotel Management</button>
+            <button class="button1"  value="Tiffin Service">Tiffin Service</button>
+            <button class="button1" value="Tattoo Artist">Tattoo Artist</button>
+            <button class="button1" value="Wedding Planner">Wedding Planner</button>
+            <button class="button1" value="Parlour">Parlour</button>
+            <button class="button1"  value="Other">Other</button>
+          </div>
+  		</div>
+  	</div>
+
+  	<div class = "col-md-9">
+  	<div class = "search">
+      {{> profiles_add_form}}
+      <div class="search_box">
+        {{> profile_search}}
+        </div>
+      </div>
+
+  	<div class = "main_menu">
+      <div class="container-fluid js-container">
+        {{> profiles}}
+        </div>
+  	</div>
+  	</div>
+  </div>
+  </div>
+  <script type="text/javascript">
+
+    /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+
+}
+
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+}
+
+    var slideIndex = 0;
+
+    showSlides();
+
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 10000); // Change image every 2 seconds
+
+      $(".button1").click(function() {
+          var fired_button = $(this).val();
+          //Session.set("userFilter", undefined);
+          Session.set("catFilter", fired_button);
+      });
+
+    };
+  </script>
+
+
+
+</template>
+
+<template name="profile_search">
+  <div class="form-group">
+  <input type="text" class="form-control" id="search_profile" placeholder="Search..." name = "search_profile">
+  <button class="btn btn-info" id="search_button_profile" name="search_button_profile"><i class="fa fa-search"></i></button>
+  </div>
+</template>
+
+<template name="profiles_add_form">
+
+<div class="modal" id="profiles_add_form">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">
+          <h4>New Profile</h4>
+        </div>
+      </div>
+      <div class="modal-body">
+        <form class="js-add-profiles">
+
+          <div class="form-group">
+            <label for="name">Name:</label><br>
+            <input type="text" class="form-control" id="name" placeholder="Enter Name .." name="name"/><br>
+        </div>
+        <br>
+          <div class="form-group">
+            <label for="img_src" align="left">Image URL:</label><br>
+            <input type="text" class="form-control" id="img_src" placeholder="url" name="img_src"/>
+
+        </div><br>
+        <div class="form-group">
+         <label for="img_alt">Image alt description:</label>
+          <textarea class="form-control" id="img_alt" placeholder="Describe the image here" name="img_alt"></textarea>
+        </div>
+
+        <div class="form-group">
+        <label for="pro_des">Description:</label>
+          <textarea class="form-control" id="pro_des" placeholder="Write description here.." name="pro_des"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="category">Category:</label>
+          <select class="form-control form-control-md" id="category">
+            <option value="">Front-End Developer</option>
+            <option>Financial Consultant</option>
+            <option>Mendhi Artist</option>
+            <option>Musician/Singer</option>
+            <option>Dancer</option>
+            <option>Hotel Management</option>
+            <option>Tiffin Service</option>
+            <option>Tattoo Artist</option>
+            <option>Wedding Planner</option>
+            <option>Parlour</option>
+            <option>Other</option>
+            </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contact">Contact details</label>
+              <input type="tel" class="form-control" id="contact" name="contact" placeholder="Format:888-888-8888" pattern="[7-9]{3}-[0-9]{3}-[0-9]{4}" required>
+
+            </div>
+          <button class="btn btn-success">Save</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-warning" data-dismiss="modal">cancel</button>
+      </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+
+<template name="profiles">
+
+  <div class= add_pro>
+  {{#if currentUser}}
+    <button class="btn btn-success js-show-profiles-form add_btn">Add Profile</button>
+    <button class="btn btn-dark js-set-image-filter add_btn">See My Profile</button>
+    <button class="btn btn-dark js-unset-image-filter add_btn">Reset</button>
+  {{/if}}
+</div>
+
+  <div class="row">
+    {{#each profiles}}
+    <div class="col-xs-12 col-md-3" id="{{_id}}">
+      <div class="thumbnail">
+        <a href="/image/{{_id}}"><img class="js-image thumbnail-img" src="{{img_src}}" alt="{{img_alt}}"></a>
+        <div class="caption">
+          <h4 style="color: #40a8c4"><b>Name :</b>{{name}}
+          </h4><br>
+          <h4 style="color: #40a8c4"><b>Category : </b>{{category}}</h4><br>
+
+          <h4 style="color: #40a8c4"><b>Rating :</b> {{>starsRating mutable=true class="js-rate-profiles" data_id=_id rating=rating}} </h4><br>
+
+          <footer class="footer_cus">
+            {{#if checkUser createdBy}}
+            <button class="js-del-profiles btn btn-danger">Delete</button>
+            <a href="/Edit_Profiles/{{_id}}"><button class="btn btn-primary js-edit-profiles">Edit</button></a>
+            {{/if}}
+            <a href="/Profile_view/{{_id}}"><button class="btn btn-info js-view-profiles">View</button></a>
+            <h6 style="color: #40a8c4; margin-top:5px">Created By : <a href="#" class="js-set-profiles-filter">{{getUser createdBy}}</a></h6>
+          </footer>
+
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</template>
+
+
+<!--<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> hello}}
+  {{> info}}
+</body>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="info">
+  <h2>Learn Meteor!</h2>
+  <ul>
+    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
+    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
+    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
+    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
+  </ul>
+</template>-->
